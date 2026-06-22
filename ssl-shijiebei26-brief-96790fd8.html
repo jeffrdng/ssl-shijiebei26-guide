@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>世界杯简明指南 · 信息索引</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f3f5f8;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      color: #1d2329;
+      line-height: 1.65;
+    }
+
+    /* 深色头图 */
+    .hero {
+      background: linear-gradient(145deg, #0b1219 0%, #1a252f 100%);
+      color: #eef2f6;
+      padding: 4rem 2rem 3.2rem;
+      text-align: center;
+      border-bottom: 3px solid #e9b741;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero h1 span {
+      color: #e9b741;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0.8rem auto 0;
+      opacity: 0.88;
+      font-weight: 350;
+    }
+
+    /* 主体容器 */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* 目录感布局 —— 双列卡片网格 */
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+      margin-top: 0.8rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.8rem 2rem 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+      transition: box-shadow 0.15s, transform 0.1s;
+      border: 1px solid #e9edf2;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.9rem;
+      color: #1f2b36;
+      border-bottom: 2px solid #e9b741;
+      padding-bottom: 0.35rem;
+      display: inline-block;
+    }
+
+    .card p, .card li {
+      font-size: 0.98rem;
+      color: #2b3a46;
+      margin-bottom: 0.6rem;
+    }
+
+    .card ul {
+      padding-left: 1.3rem;
+      list-style: square;
+    }
+
+    .card ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* 强调色链接 */
+    a {
+      color: #b8863a;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #7a5f28;
+      border-bottom: 1px solid #b8863a;
+    }
+
+    /* 全宽区块（说明区、提示区） */
+    .info-block {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 2rem 2.2rem;
+      margin-top: 2rem;
+      border: 1px solid #e9edf2;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+
+    .info-block h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #1f2b36;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .info-block h3 i {
+      font-style: normal;
+      background: #e9b741;
+      color: #0b1219;
+      font-size: 0.8rem;
+      padding: 0.1rem 0.7rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    .info-block p {
+      font-size: 0.98rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .info-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-mini {
+      margin-top: 1.2rem;
+    }
+
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      border-left: 3px solid #e9b741;
+      padding-left: 1rem;
+    }
+
+    .faq-mini summary {
+      font-weight: 600;
+      color: #1f2b36;
+      cursor: pointer;
+      padding: 0.2rem 0;
+    }
+
+    .faq-mini details p {
+      margin-top: 0.5rem;
+      color: #3f4e5c;
+    }
+
+    /* 相关信息区 */
+    .related-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .related-tags span {
+      background: #eef2f7;
+      color: #1f2b36;
+      padding: 0.3rem 1rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 450;
+      border: 1px solid #dce2e9;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #dce2e9;
+      margin: 1.8rem 0 1.2rem;
+    }
+
+    .footnote {
+      text-align: center;
+      color: #6b7a88;
+      font-size: 0.85rem;
+      margin-top: 2.8rem;
+      border-top: 1px solid #dce2e9;
+      padding-top: 2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 720px) {
+      .hero { padding: 3rem 1.2rem 2.5rem; }
+      .hero h1 { font-size: 2rem; }
+      .grid-2col { grid-template-columns: 1fr; gap: 1.4rem; }
+      .card, .info-block { padding: 1.5rem 1.2rem; }
+      .container { padding: 1.5rem 1rem 3rem; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.7rem; }
+      .card h3 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <section class="hero">
+    <h1>⚽ 简明<span>世界杯</span>知识库</h1>
+    <p>赛事架构 · 观赛指南 · 安全提醒 · 信息索引 —— 一站式获取核心内容</p>
+  </section>
+
+  <div class="container">
+    <!-- 目录感网格：特点 + 场景／数据 -->
+    <div class="grid-2col">
+      <div class="card">
+        <h3>📌 核心特点</h3>
+        <ul>
+          <li>四年一届，32 支决赛圈队伍（2026 年起扩至 48 支）。</li>
+          <li>由六大洲足联通过预选赛产生参赛席位。</li>
+          <li>决赛阶段共 64 场比赛，历时约一个月。</li>
+          <li>卫冕冠军自动获得下一届正赛资格（自 2006 年取消后改为必须参加预选赛）。</li>
+        </ul>
+        <p style="margin-top: 0.8rem;">了解完整赛事体系，可参考 <a href="https://ssl--shijiebei26.com">世界杯</a> 官方资料专区。</p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 观赛与场景</h3>
+        <ul>
+          <li>小组赛阶段每队至少三场比赛，积分决定出线。</li>
+          <li>淘汰赛包括 1/8 决赛、1/4 决赛、半决赛、决赛。</li>
+          <li>第三名决赛保留至今，由两支半决赛失利队伍争夺。</li>
+          <li>亮点：开幕式、金靴奖、金球奖、最佳年轻球员评选。</li>
+        </ul>
+        <p style="margin-top: 0.6rem;">赛事日程与即时数据，建议直接访问 <a href="https://ssl--shijiebei26.com">世界杯</a> 获取最新信息。</p>
+      </div>
+    </div>
+
+    <!-- 说明区 + 提示区（合并为两个 info-block） -->
+    <div class="info-block">
+      <h3>📖 说明区 · 基础架构 <i>必读</i></h3>
+      <p><strong>赛制演变：</strong> 1930 年首届 13 支队伍，1998 年扩至 32 队。2026 年美加墨世界杯将首次采用 48 队赛制，小组赛改为 12 个小组每组 4 队，出线规则同步调整。</p>
+      <p><strong>举办周期：</strong> 通常在 6 月至 7 月举行（卡塔尔 2022 年例外，因气候安排在 11–12 月）。每届主办国通过 Fédération Internationale de Football Association (FIFA) 投票产生。</p>
+      <p><strong>奖杯：</strong> 大力神杯自 1974 年起使用，采用 18K 黄金铸造，底座刻有冠军队名称。巴西、德国、意大利、阿根廷、法国、乌拉圭、英格兰、西班牙等八支队伍曾夺冠。</p>
+    </div>
+
+    <div class="info-block" style="margin-top: 1.6rem;">
+      <h3>⚠️ 提示区 · 访问与安全提醒</h3>
+      <p>• 通过 <a href="https://ssl--shijiebei26.com">世界杯</a> 获取赛程、积分、射手榜等数据时，请确保网络环境安全。建议使用官方渠道及 HTTPS 连接，避免第三方仿冒站点。</p>
+      <p>• 任何涉及购票、竞猜、博彩的链接均需谨慎核实。正规票务仅通过 FIFA 授权平台销售，切勿向个人账户转账。</p>
+      <p>• 直播与回放资源请优先选择持权转播商（如央视、咪咕、抖音等国内平台），避免使用来源不明的流媒体地址。</p>
+      <p>• 如发现仿冒 <em>ssl--shijiebei26.com</em> 的钓鱼页面，可向相关安全机构举报。</p>
+    </div>
+
+    <!-- FAQ 摘要 → 相关信息区 -->
+    <div class="info-block" style="margin-top: 1.6rem;">
+      <h3>❓ FAQ 摘要 · 常见疑问</h3>
+      <div class="faq-mini">
+        <details>
+          <summary>世界杯预选赛如何分配名额？</summary>
+          <p>目前各大洲名额：欧洲 13 席、非洲 9 席、亚洲 8.5 席、南美 6.5 席、中北美及加勒比 6.5 席、大洋洲 1.5 席，加上东道主自动晋级。2026 年扩军后名额将重新分配。</p>
+        </details>
+        <details>
+          <summary>同一球员能否代表不同国家队参赛？</summary>
+          <p>根据 FIFA 章程，球员若拥有双重国籍，在满足年龄及出场限制条件下可转换协会。但一旦在正式比赛中代表某队出场（包含预选赛），原则上不可再更改。</p>
+        </details>
+        <details>
+          <summary>为什么有时会看到“ssl--shijiebei26.com”这样的域名？</summary>
+          <p>该域名为赛事信息聚合站，采用 SSL 加密保障传输安全。其内容整合了赛程、历史数据及官方公告，适合快速查阅。域名中的 "ssl" 标识 HTTPS 特性，便于识别可信连接。</p>
+        </details>
+      </div>
+      <hr>
+      <h3 style="border-bottom: none; display: block; margin-top: 0.2rem;">🏷️ 相关信息区</h3>
+      <div class="related-tags">
+        <span>FIFA 官方排名</span>
+        <span>历届冠军列表</span>
+        <span>2026 主办城市</span>
+        <span>金靴奖历史</span>
+        <span>VAR 技术沿革</span>
+        <span>世界杯吉祥物</span>
+        <span>比赛用球进化</span>
+        <span>东道主战绩</span>
+      </div>
+      <p style="margin-top: 1rem; font-size: 0.9rem; color: #4b5a66;">以上标签对应内容均可通过 <a href="https://ssl--shijiebei26.com">世界杯</a> 信息库检索查阅。</p>
+    </div>
+
+    <div class="footnote">
+      <p>简明指南 · 知识库入口 · 数据截止 2025 年 3 月</p>
+      <p style="margin-top: 0.3rem;">信息仅供参考，具体以 FIFA 官方发布为准</p>
+    </div>
+  </div>
+
+</body>
+</html>
